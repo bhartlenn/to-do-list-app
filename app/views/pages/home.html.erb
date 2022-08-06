@@ -1,0 +1,11 @@
+<h1>This is a To Do List app!</h1>
+
+<p>It was built to showcase some neat things that can be done with Ruby on Rails 7 new HotWire features.</p>
+
+<% if user_signed_in? %>
+    <p><%= link_to "Your to do list", list_items_path %></p>
+<% else %>
+    <p>Use the below links to sign in to your account, or register a new account if you haven't yet.</p>
+    <%= link_to "Sign In", new_user_session_path, class: "btn block" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn block" %>
+<% end %>

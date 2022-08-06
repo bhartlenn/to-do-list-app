@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="<%= controller_and_action_string %>">
+
+    <!-- Flash messages -->
+    <section id="flashes">
+      <%= render "layouts/flash" %>
+    </section>
+
+    <div id="site_container">
+      
+      <!-- Site header: #site_header -->
+      <%= render "layouts/header" %>
+      
+      <!-- Site content area: #site_content -->
+      <section id="site_content" class="container">
+        <%= yield %>
+      </section>
+      
+      <!-- Site footer: #site_footer -->
+      <%= render "layouts/footer" %>
+
+    </div>
+  </body>
+</html>

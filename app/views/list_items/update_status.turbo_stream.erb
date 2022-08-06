@@ -1,0 +1,11 @@
+<%= render_turbo_stream_flash_messages %>
+<!-- Remove list item from screen -->
+<%= turbo_stream.remove dom_id(@list_item) %>
+<!-- Add list item back into incomplete or complete list items container based on latest status -->
+<% if prev_list_item = @list_item.prev_list_item %>
+    <%= turbo_stream.after prev_list_item do %>
+        <%= render @list_item %>
+    <% end %>
+<% else %>
+    <%= turbo_stream.prepend "#{@list_item.status}_list_items_container", @list_item %>
+<% end %>

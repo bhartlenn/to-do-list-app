@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial Rounded MT Bold, Helvetica Rounded, Arial, sans-serif;
+    background: var(--site-background);
+    color: var(--text-color);
+}
+h1,h2,h3,h4,h5,h6 {
+    color: var(--heading-color);
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+
+/* remove default button styling */
+button {
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+a.btn,
+input[type="submit"],
+form.button_to button {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: var(--btn-bg-color);
+    color: #fff;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* Link styling */
+a, a:link, a:visited, a:focus, 
+button {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+a:hover, a:active, 
+button:hover, button:active {
+    border-bottom: 1px solid var(--link-color);
+}
+
+/* Material Icons */
+.material-icons-outlined:link,
+.material-icons-outlined:active,
+.material-icons-outlined:visited,
+.material-icons-outlined:focus {
+    border-bottom: none;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/* Flash Messages */
+#flashes {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: var(--site-max-width);
+}
+
+.flash_message {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    /* custom keyframes animation "appear-then-fade" found in _animations.css */
+    animation: appear-then-fade 4s both;
+    color: #fff;
+}
+
+.flash_message.notice {
+    background: #009a27;
+}
+
+.flash_message.alert {
+    background: #bf2c2c;
+}
+
+/** 
+ * Empty state messages that are only visible if they are they only child item of parent
+ * <p class="empty_state_msg">You haven't created any [object name]'s yet.</p>
+ **/
+.empty_state_msg {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.empty_state_msg:only-child {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+#site_container {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+}
+
+/**
+ * Site header
+ */
+#site_header {
+    display: flex;
+    justify-content: space-between;
+}
+#account_links {
+    margin-left: auto; /* pushes account links to the right side of header */
+    display: flex;
+    flex-wrap: row wrap;
+    column-gap: 0.5rem;
+    align-items: center;
+    
+}
+
+/**
+ * Site content
+ */
+#site_content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    padding: 0 1rem;
+}
+
+/**
+ * Home page content
+ */
+.pages_home #site_content {
+    text-align: center;
+}
+
+/**
+ * Site footer
+ */
+#site_footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#site_footer p {
+    text-align: center;
+}
+
+/**
+ * Lists of List Items
+ */
+.list_items {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 1rem;
+    width: 100%;
+}
+
+/**
+ * Single List Item
+ */
+.list_item {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-background);
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+}
+
+.list_item_container {
+    
+}
+
+.list_item_due {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}

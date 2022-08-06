@@ -1,0 +1,14 @@
+/* Any screen that is 1366px or larger will have 1366px wide site, and smaller screens will be responsive */
+@media only screen and (min-width: 1400px) {
+    #site_container {
+        width: 1366px;
+        max-width: 1366px;
+        margin: 0 auto;
+    }
+    .container {
+        width: 1366px;
+        max-width: 1366px;
+        margin: 0 auto;
+        padding: 1rem 0;
+    }
+}

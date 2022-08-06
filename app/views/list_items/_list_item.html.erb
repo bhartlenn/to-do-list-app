@@ -1,0 +1,24 @@
+<%= turbo_frame_tag list_item do %>
+  <div id="<%= dom_id list_item %>_container" 
+    class="list_item" 
+    data-controller="animations"
+    data-action="turbo:render->animations#testing">
+
+    <h3><%= list_item.name %></h3>
+
+    <div class="list_item_due"><span class="material-icons-outlined">calendar_month</span><%= list_item.due_formatted %></div>
+
+    <div class="actions">
+      <%= link_to "edit", 
+              edit_list_item_path(list_item), 
+              data: { turbo_frame: dom_id(list_item) }, 
+              class: "btn material-icons-outlined", 
+              title: "Edit List Item" %>
+      <%= button_to list_item.get_status_icon_text, 
+              update_status_list_item_path(list_item),
+              method: :patch,
+              class: "btn material-icons-outlined" %>
+    </div>
+
+  </div>
+<% end %>

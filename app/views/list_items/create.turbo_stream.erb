@@ -1,0 +1,11 @@
+<%= render_turbo_stream_flash_messages %>
+
+<%= turbo_stream.replace ListItem.new, "" %>
+
+<% if prev_list_item = @list_item.prev_list_item %>
+    <%= turbo_stream.after prev_list_item do %>
+        <%= render @list_item %>
+    <% end %>
+<% else %>
+    <%= turbo_stream.prepend "incomplete_list_items_container", @list_item %>
+<% end %>

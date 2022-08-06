@@ -1,0 +1,34 @@
+<%= turbo_stream_from current_user, "list_items" %>
+
+
+
+<!--
+* This link and turbo frame are for loading the create new list item form
+-->
+<%= link_to raw('<span class="material-icons">add</span>') + ' New List Item',  
+          new_list_item_path,
+          data: { turbo_frame: dom_id(ListItem.new) },
+          class: "btn" %>       
+<%= turbo_frame_tag ListItem.new %>
+
+<!--
+* Container for incomplete list items
+-->
+<h2>To Do</h2>
+<div id="incomplete_list_items_container" class="list_items">
+  <% @incomplete_list_items.each do |list_item| %>
+    <%= render list_item %>
+  <% end %>
+  <p class="empty_state_msg">You don't have any incomplete To Do List Items. Would you like to &nbsp; <%= link_to " Create new list item?", new_list_item_path, data: { turbo_frame: dom_id(ListItem.new) } %></p>
+</div>
+
+<!--
+* Container for completed(complete) list items
+-->
+<h2>Completed Items</h2>
+<div id="complete_list_items_container" class="list_items">
+<% @complete_list_items.each do |list_item| %>
+    <%= render list_item %>
+  <% end %>
+  <p class="empty_state_msg">You haven't completed any To Do List Items yet</p>
+</div>
