@@ -66,6 +66,10 @@ button:hover, button:active {
 .actions {
     display: flex;
     flex-flow: row nowrap;
+    column-gap: 0.5rem;
+}
+.actions > a, .actions > form.button_to button {
+    color: var(--link-color);
 }
 
 /* Flash Messages */
@@ -182,19 +186,22 @@ button:hover, button:active {
 /**
  * Single List Item
  */
-.list_item {
-    display: flex;
-    flex-flow: row nowrap;
-    column-gap: 1rem;
-    justify-content: space-between;
-    align-items: center;
+ .list_item_frame {
     background: var(--card-background);
     padding: 0rem 1rem;
     border-radius: 1rem;
+ }
+.list_item, .list_item_form {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 .list_item_container {
-    
+
 }
 
 .list_item_due {

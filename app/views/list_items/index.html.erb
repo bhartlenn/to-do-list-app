@@ -1,7 +1,5 @@
 <%= turbo_stream_from current_user, "list_items" %>
 
-
-
 <!--
 * This link and turbo frame are for loading the create new list item form
 -->
@@ -15,7 +13,7 @@
 * Container for incomplete list items
 -->
 <h2>To Do</h2>
-<div id="incomplete_list_items_container" class="list_items">
+<div id="incomplete_list_items_container" class="list_items" data-controller="animations">
   <% @incomplete_list_items.each do |list_item| %>
     <%= render list_item %>
   <% end %>

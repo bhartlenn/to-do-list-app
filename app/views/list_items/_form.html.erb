@@ -1,4 +1,4 @@
-<%= form_with(model: list_item, id: "#{dom_id(list_item)}_form") do |form| %>
+<%= form_with(model: list_item, id: "#{dom_id(list_item)}_form", class: "list_item_form") do |form| %>
   <% if list_item.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(list_item.errors.count, "error") %> prohibited this list_item from being saved:</h2>
