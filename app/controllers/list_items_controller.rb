@@ -80,7 +80,20 @@ class ListItemsController < ApplicationController
         format.html { render :index, status: :unprocessable_entity }
       end
     end
+  end
 
+  # Filter incomplete list items by category
+  def filter_list_items
+
+    if !params[:category_id].presence
+      @list_items = current_user.incomplete_list_items
+    else
+      @list_items = ListItem.filter_items(params[:category_id]) || []
+    end
+
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   # PRIVATE Controller Actions used by PUBLIC methods above

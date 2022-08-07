@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   # list item routes
   resources :list_items do
     patch 'update_status', to: 'list_items#update_status', as: "update_status", on: :member
+    
+    collection do
+      post :filter_list_items, as: "filter"
+    end
   end
 
   # pages controller routes

@@ -1,0 +1,11 @@
+<%= form_with url: filter_list_items_path, 
+    method: :post,
+    data: {
+        controller: 'debounce',
+        debounce_target: 'form'
+    } do |form| %>
+
+    <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: "All"},
+        data: { action: "input->debounce#submit_form" } %>
+
+<% end %>

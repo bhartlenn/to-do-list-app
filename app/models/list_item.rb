@@ -13,7 +13,9 @@ class ListItem < ApplicationRecord
 
   scope :ordered, -> { reorder(due: :asc) }
 
-  # get list item with same status, and due date previous to current list item due date. Used by list_items#create to insert list item into right spot in list
+  scope :filter_items, -> (category_id) { where( 'category_id = ? AND status = ?', category_id, "incomplete" ) }
+
+  # get list item with the same status, and a due date previous to current list item due date. Used by list_items#create and list_items#update_status to insert list item into right spot in list
   def prev_list_item
     if self.status == "incomplete"
       self.user.incomplete_list_items.where("due < ?", self.due).last

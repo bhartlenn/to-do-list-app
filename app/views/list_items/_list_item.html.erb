@@ -6,9 +6,9 @@
 
     <h3><%= list_item.name %></h3>
 
-    <div class="list_item_description">
+    <p class="list_item_description">
       <%= list_item.details %>
-    </div>
+    </p>
 
     <div class="list_item_due"><span class="material-icons-outlined">calendar_month</span><%= list_item.due_formatted %></div>
 
@@ -16,7 +16,7 @@
       <%= button_to list_item.get_status_icon_text, 
               update_status_list_item_path(list_item),
               method: :patch,
-              class: "btn material-icons-outlined" %>
+              class: "material-icons-outlined" %>
       <%= link_to "edit", 
               edit_list_item_path(list_item), 
               data: { turbo_frame: dom_id(list_item) }, 

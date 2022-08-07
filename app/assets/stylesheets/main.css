@@ -36,7 +36,7 @@ form.button_to button {
     border: none;
     outline: none;
     background: var(--btn-bg-color);
-    color: #fff;
+    color: var(--link-color);
     padding: 0.25rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -49,8 +49,8 @@ button {
     text-decoration: none;
     border-bottom: 1px solid transparent;
 }
-a:hover, a:active, 
-button:hover, button:active {
+a:hover 
+button:hover {
     border-bottom: 1px solid var(--link-color);
 }
 
@@ -66,10 +66,104 @@ button:hover, button:active {
 .actions {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: flex-end;
     column-gap: 0.5rem;
 }
-.actions > a, .actions > form.button_to button {
+.actions > a,
+.actions > a.btn,
+.actions > a:active,
+.actions > a:visited,
+.actions > a:focus,
+.actions > form.button_to button {
     color: var(--link-color);
+}
+.actions > a:hover, .actions > form.button_to button:hover {
+    color: var(--link-hover-color);
+}
+
+/* general form css */
+form {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form label {
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="datetime-local"],
+textarea {
+    border: 1px solid #ccc;
+    width: 100%;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="datetime-local"],
+textarea {
+    outline: none;
+    padding: 0.75rem;
+    font-size: medium;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+textarea {
+    min-width: 282px;
+}
+
+a.btn,
+input[type="submit"],
+form.button_to button {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: var(--dark-pink);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+
+button {
+    border: none;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+a.btn:hover,
+form.button_to button:hover {
+    color: var(--link-hover-color);
+}
+
+/* form errors */
+.errors-container {
+    color: var(--bright-pink);
+}
+
+.errors {
+    display: flex;
+    flex-direction: column;
+}
+
+.errors>.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.error>span {
+    margin-right: 1rem;
 }
 
 /* Flash Messages */
@@ -134,6 +228,8 @@ button:hover, button:active {
 #site_header {
     display: flex;
     justify-content: space-between;
+    column-gap: 1rem;
+    align-items: center;
 }
 #account_links {
     margin-left: auto; /* pushes account links to the right side of header */
@@ -176,6 +272,13 @@ button:hover, button:active {
 /**
  * Lists of List Items
  */
+#to_do_list_header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 1rem;
+}
+
 .list_items {
     display: flex;
     flex-flow: column wrap;
@@ -199,9 +302,11 @@ button:hover, button:active {
     align-items: center;
     
 }
-
-.list_item_container {
-
+.list_item_form {
+    padding: 1rem;
+}
+.list_item_form > div {
+    flex: 1 1 0;
 }
 
 .list_item_due {
