@@ -11,6 +11,6 @@ export default class extends Controller {
   listItemTargetConnected(element) {
     setTimeout( () => {
       element.classList.add("show_end")
-    }, 100)
+    }, 25)
   }
 }
