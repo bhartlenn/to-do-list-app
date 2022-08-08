@@ -290,16 +290,27 @@ form.button_to button:hover {
  * Single List Item
  */
  .list_item_frame {
-    background: var(--card-background);
-    padding: 0rem 1rem;
-    border-radius: 1rem;
+    
  }
+ 
+ .list_item.show_start {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+ }
+ .list_item.show_end {
+    opacity: 1;
+ }
+
 .list_item, .list_item_form {
     display: flex;
     flex-flow: row wrap;
     column-gap: 1rem;
     justify-content: space-between;
     align-items: center;
+
+    background: var(--card-background);
+    padding: 0rem 1rem;
+    border-radius: 1rem;
     
 }
 .list_item_form {

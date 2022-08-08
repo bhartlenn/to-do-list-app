@@ -9,10 +9,8 @@ export default class extends Controller {
   }
 
   listItemTargetConnected(element) {
-    console.log( element.classList.add("animation_show") )
-  }
-
-  testing(event) {
-    console.log("turbo:frame-load event was fired")
+    setTimeout( () => {
+      element.classList.add("show_end")
+    }, 100)
   }
 }

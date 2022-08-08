@@ -1,6 +1,11 @@
 <%= turbo_frame_tag list_item, class: "list_item_frame" do %>
+  <%
+    if list_item.previously_new_record?
+      show_start = "show_start"
+    end
+  %>
   <div id="<%= dom_id list_item %>_container" 
-    class="list_item"
+    class="list_item <%= show_start %>"
     data-animations-target="listItem"  
   >
 
@@ -16,7 +21,7 @@
       <%= button_to list_item.get_status_icon_text, 
               update_status_list_item_path(list_item),
               method: :patch,
-              class: "material-icons-outlined" %>
+              class: "btn material-icons-outlined" %>
       <%= link_to "edit", 
               edit_list_item_path(list_item), 
               data: { turbo_frame: dom_id(list_item) }, 
