@@ -83,6 +83,7 @@ class ListItemsController < ApplicationController
   end
 
   # Filter incomplete list items by category
+  # POST /list_items/filter_list_items
   def filter_list_items
 
     if !params[:category_id].presence

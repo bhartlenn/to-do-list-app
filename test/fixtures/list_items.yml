@@ -1,17 +1,42 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  details: MyText
-  due: 2022-07-30 14:08:51
-  status: 1
+  name: Wash Dishes
+  details: All the pots and pans in the sink need washing, and dishes need to be put in the dishwasher
+  due: 2022-08-15 14:08:00
+  status: 0
   user: one
   category: one
 
 two:
-  name: MyString
-  details: MyText
-  due: 2022-07-30 14:08:51
+  name: Vacuum
+  details: Use the big vacuum for downstairs, upstairs, and on the stairs
+  due: 2022-08-16 14:10:00
+  status: 0
+  user: one
+  category: one
+
+three:
+  name: Water Garden
+  details: Water all the potted/boxed plants, plus water the lawn with the sprinkler
+  due: 2022-08-15 14:08:00
   status: 1
-  user: two
+  user: one
+  category: one
+
+four:
+  name: Work out more
+  details: Try to get to the gym twice a week
+  due: 2022-08-17 14:10:00
+  status: 0
+  user: one
   category: two
+
+five:
+  name: Clean litter boxes
+  details: Clean out all the poos and the pees
+  due: 2022-08-18 14:10:00
+  status: 1
+  user: one
+  category: one
+

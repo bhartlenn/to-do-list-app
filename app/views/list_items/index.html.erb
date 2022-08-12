@@ -14,7 +14,7 @@
 -->
 <header id="to_do_list_header">
   
-  <h2>To Do List</h2>
+  <h1>To Do List</h1>
 
   <!--
   * Filter to do list items
@@ -30,7 +30,7 @@
 <!--
 * Container for completed(complete) list items
 -->
-<h2>Completed List</h2>
+<h2>Completed List Items</h2>
 <div id="complete_list_items_container" class="list_items">
   <%= render partial: "list_item", collection: @complete_list_items, as: :list_item %>
   <p class="empty_state_msg">You haven't completed any To Do List Items yet</p>

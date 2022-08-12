@@ -300,6 +300,9 @@ form.button_to button:hover {
  .list_item.show_end {
     opacity: 1;
  }
+ .fade_in {
+    animation: fadeIn 0.5s;
+ }
 
 .list_item, .list_item_form {
     display: flex;
